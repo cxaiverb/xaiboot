@@ -1,0 +1,21 @@
+# NetworkManager gives both CLI and desktop-friendly networking in the live
+# environment. The CLI tools below keep the system usable without X.
+network-manager
+network-manager-gnome
+wpasupplicant
+wireless-tools
+iw
+rfkill
+iperf3
+iproute2
+iputils-ping
+net-tools
+bind9-dnsutils
+traceroute
+nmap
+tcpdump
+ethtool
+netcat-openbsd
+openssh-client
+openssh-server
+mtr-tiny

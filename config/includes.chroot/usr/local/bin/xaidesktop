@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -eq 0 ]; then
+  echo "Do not start the desktop as root. Log in as xaiboot and run xaidesktop." >&2
+  exit 1
+fi
+
+if [ -n "${DISPLAY:-}" ]; then
+  echo "A graphical session already appears to be running on DISPLAY=$DISPLAY." >&2
+  exit 1
+fi
+
+if ! command -v startx >/dev/null 2>&1; then
+  echo "startx is not installed. The xinit package is required." >&2
+  exit 1
+fi
+
+exec startx

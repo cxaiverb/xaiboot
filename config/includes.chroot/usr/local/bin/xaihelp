@@ -1,0 +1,24 @@
+#!/bin/sh
+cat <<'EOF'
+XaiBoot quick help
+
+Start desktop:
+  xaidesktop
+  startx
+
+Networking:
+  nmcli device
+  nmcli device wifi list
+  sudo nmtui
+
+Logs:
+  journalctl -b
+  dmesg -T
+  /var/log/
+
+Common tools:
+  lsblk, blkid, fdisk, parted, gdisk, gparted
+  smartctl, nvme, hdparm, lshw, lscpu, lspci, lsusb, dmidecode
+  ip, ping, dig, traceroute, mtr, nmap, tcpdump, ethtool
+  testdisk, cryptsetup, mdadm, lvm, btrfs, xfs_repair, fsck
+EOF

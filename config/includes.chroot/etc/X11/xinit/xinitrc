@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Default X session for XaiBoot. This lets both `startx` and `xaidesktop`
+# launch XFCE without a display manager.
+exec startxfce4

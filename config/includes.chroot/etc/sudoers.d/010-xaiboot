@@ -1,0 +1,3 @@
+# XaiBoot is a live rescue environment. The default live user has passwordless
+# sudo so recovery work does not depend on knowing a live-session password.
+xaiboot ALL=(ALL) NOPASSWD:ALL

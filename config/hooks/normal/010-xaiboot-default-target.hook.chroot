@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+# XaiBoot is text-mode first. This symlink is the same state produced by
+# `systemctl set-default multi-user.target`, without requiring systemd to be
+# running inside the build chroot.
+ln -sfn /lib/systemd/system/multi-user.target /etc/systemd/system/default.target
+
+# If a future package addition pulls in a display manager, do not let it force a
+# graphical login on boot. The desktop remains available through xaidesktop.
+for service in display-manager lightdm gdm3 sddm; do
+  rm -f "/etc/systemd/system/multi-user.target.wants/${service}.service"
+  rm -f "/etc/systemd/system/graphical.target.wants/${service}.service"
+done

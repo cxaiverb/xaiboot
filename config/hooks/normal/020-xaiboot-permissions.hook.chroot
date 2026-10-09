@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+# Git only records 0644/0755, so files from a fresh clone lose stricter modes.
+# sudo expects drop-ins to be 0440.
+chmod 0440 /etc/sudoers.d/010-xaiboot

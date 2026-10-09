@@ -1,0 +1,10 @@
+# XFCE is installed for on-demand GUI work. No display manager is included, so
+# boot stays text-first and the user starts X manually with xaidesktop/startx.
+xorg
+xinit
+dbus-x11
+xfce4
+xfce4-terminal
+thunar
+mousepad
+firefox-esr

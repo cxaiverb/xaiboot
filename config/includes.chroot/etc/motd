@@ -1,0 +1,10 @@
+XaiBoot Debian 13 rescue environment
+
+Desktop is installed but not started automatically.
+Start it with: xaidesktop
+
+Quick help: xaihelp
+Logs: journalctl -b, dmesg -T, /var/log/
+Networking: nmcli device, sudo nmtui
+Storage: lsblk, blkid, fdisk, parted, gdisk, gparted
+Hardware: lshw, lscpu, lspci, lsusb, dmidecode, smartctl, nvme

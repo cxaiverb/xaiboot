@@ -1,0 +1,27 @@
+#!/bin/sh
+set -eu
+
+# live-build calls this script when `lb config` runs. Keeping the options here
+# makes the image reproducible and avoids depending on a developer's shell
+# history or one-off local commands.
+lb config noauto \
+  --mode debian \
+  --distribution trixie \
+  --architectures amd64 \
+  --archive-areas "main contrib non-free-firmware" \
+  --binary-images iso-hybrid \
+  --bootloaders "syslinux,grub-efi" \
+  --debian-installer none \
+  --linux-flavours amd64 \
+  --memtest memtest86+ \
+  --apt-recommends true \
+  --updates true \
+  --security true \
+  --backports false \
+  --firmware-binary true \
+  --firmware-chroot true \
+  --iso-application "XaiBoot" \
+  --iso-publisher "XaiBoot Project" \
+  --iso-volume "XAIBOOT_TRIXIE_AMD64" \
+  --bootappend-live "boot=live components username=xaiboot hostname=xaiboot locales=en_US.UTF-8 keyboard-layouts=us timezone=UTC systemd.unit=multi-user.target" \
+  "${@}"
